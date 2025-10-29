@@ -50,28 +50,38 @@ VITE_ENABLE_ANALYTICS=true
 1. Habilitar en el dashboard de Netlify
 2. El archivo `netlify.toml` ya está configurado
 
-📚 **Documentación completa**: Ver [ANALYTICS.md](./ANALYTICS.md)
+📚 **Documentación completa**: Ver [docs/ANALYTICS.md](./docs/ANALYTICS.md)
 
 ## 🛠️ Estructura del Proyecto
 
 ```
-src/
-├── components/          # Componentes Vue
-│   ├── ProjectCard.vue
-│   ├── CookieConsent.vue
-│   └── HelloWorld.vue
-├── views/              # Páginas principales
-│   ├── Home.vue
-│   ├── Contact.vue
-│   └── ProjectDetail.vue
-├── composables/        # Lógica reutilizable
-│   └── useAnalytics.js
-├── config/            # Configuración
-│   └── analytics.js
-├── plugins/           # Plugins Vue
-│   └── analytics.js
-└── router/           # Configuración de rutas
-    └── index.js
+├── docs/                  # Documentación
+│   ├── ANALYTICS.md      # Guía de Google Analytics
+│   └── DEPLOY.md         # Guía de despliegue
+├── public/               # Archivos estáticos
+│   ├── Images/          # Imágenes de proyectos
+│   └── projects.json    # Datos de proyectos
+├── scripts/             # Scripts de automatización
+│   └── setup-analytics.sh
+├── src/
+│   ├── components/      # Componentes Vue
+│   │   ├── ProjectCard.vue
+│   │   └── CookieConsent.vue
+│   ├── views/          # Páginas principales
+│   │   ├── Home.vue
+│   │   ├── Contact.vue
+│   │   └── ProjectDetail.vue
+│   ├── composables/    # Lógica reutilizable
+│   │   └── useAnalytics.js
+│   ├── config/         # Configuración
+│   │   └── analytics.js
+│   ├── plugins/        # Plugins Vue
+│   │   └── analytics.js
+│   └── router/         # Configuración de rutas
+│       └── index.js
+├── .env.example        # Plantilla de variables
+├── netlify.toml        # Configuración Netlify
+└── vite.config.js      # Configuración Vite
 ```
 
 ## 📈 Eventos Tracked
@@ -152,6 +162,10 @@ MIT License - ver [LICENSE](LICENSE) para más detalles.
 
 ## 📞 Soporte
 
-Para más información sobre configuración de analytics, consultar [ANALYTICS.md](./ANALYTICS.md).
+Para más información sobre configuración de analytics, consultar [docs/ANALYTICS.md](./docs/ANALYTICS.md).
+
+### Documentación Adicional
+- 📊 [Guía de Analytics](./docs/ANALYTICS.md) - Configuración completa de Google Analytics
+- 🚀 [Guía de Despliegue](./docs/DEPLOY.md) - Paso a paso para Netlify
 
 **Vue 3 + Vite Template**: Este proyecto está basado en el template oficial de Vue 3 con Vite. Consultar la [documentación oficial](https://vuejs.org/guide/scaling-up/tooling.html#ide-support) para más detalles.
