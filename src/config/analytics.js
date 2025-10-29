@@ -15,11 +15,6 @@ export const analyticsConfig = {
     }
   },
 
-  // Netlify Analytics (automático si está habilitado en el sitio)
-  netlifyAnalytics: {
-    enabled: import.meta.env.VITE_NETLIFY_ANALYTICS === 'true'
-  },
-
   // Configuración de cookies y privacidad
   privacy: {
     cookieConsent: false, // Cambiar a true si necesitas consentimiento de cookies

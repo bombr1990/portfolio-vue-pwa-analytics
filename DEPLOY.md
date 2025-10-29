@@ -38,10 +38,6 @@ Agrega estas variables (haz clic en "New variable" para cada una):
 - **Value**: `true`
 
 ### Variable 3:
-- **Key**: `VITE_NETLIFY_ANALYTICS`
-- **Value**: `true`
-
-### Variable 4:
 - **Key**: `VITE_ENVIRONMENT`
 - **Value**: `production`
 
@@ -85,13 +81,6 @@ Una vez desplegado:
 ---
 
 ## 🔧 Configuración Opcional
-
-### Netlify Analytics (Servidor)
-
-1. Ve a: **Site settings → Analytics**
-2. Haz clic en **"Enable Analytics"** 
-3. Prueba gratis 14 días ($9/mes después)
-4. O usa solo Google Analytics (gratis)
 
 ### Custom Domain
 

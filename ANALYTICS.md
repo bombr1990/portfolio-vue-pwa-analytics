@@ -1,10 +1,10 @@
-# 📊 Configuración de Analytics
+# 📊 Configuración de Google Analytics
 
-Este proyecto incluye una implementación completa de analytics con soporte para Google Analytics 4 y Netlify Analytics.
+Este proyecto incluye una implementación completa de Google Analytics 4.
 
 ## 🚀 Configuración Rápida
 
-### 1. Google Analytics 4
+### Google Analytics 4
 
 1. **Crear cuenta en GA4**:
    - Ve a [Google Analytics](https://analytics.google.com/)
@@ -16,7 +16,6 @@ Este proyecto incluye una implementación completa de analytics con soporte para
    # .env.production
    VITE_GA_MEASUREMENT_ID=G-TU_ID_REAL
    VITE_ENABLE_ANALYTICS=true
-   VITE_NETLIFY_ANALYTICS=true
    ```
 
 3. **Actualizar configuración**:
@@ -28,19 +27,6 @@ Este proyecto incluye una implementación completa de analytics con soporte para
        enabled: import.meta.env.VITE_ENABLE_ANALYTICS === 'true'
      }
    }
-   ```
-
-### 2. Netlify Analytics
-
-1. **Habilitar en Netlify Dashboard**:
-   - Ve a tu sitio en Netlify
-   - Site settings → Analytics
-   - Enable Analytics
-
-2. **Configurar en netlify.toml**:
-   ```toml
-   [[plugins]]
-     package = "@netlify/plugin-analytics"
    ```
 
 ## 📈 Eventos Tracked Automáticamente
@@ -126,20 +112,16 @@ El componente `CookieConsent` maneja automáticamente:
 - ✅ Configuración de GA4 según consentimiento
 - ✅ Cumplimiento GDPR
 
-## 📊 Métricas Disponibles
+## 📊 Métricas Disponibles en Google Analytics
 
-### En Google Analytics
 - **Usuarios únicos**: Visitantes del portfolio
 - **Sesiones**: Visitas al sitio
 - **Page Views**: Páginas vistas
 - **Bounce Rate**: Tasa de rebote
+- **Engagement**: Tiempo en el sitio y páginas por sesión
 - **Conversiones**: Formularios enviados, descargas
-
-### En Netlify Analytics
-- **Page Views**: Sin cookies, datos del servidor
-- **Unique Visitors**: Basado en IP
-- **Top Pages**: Páginas más visitadas
-- **Referrers**: Fuentes de tráfico
+- **Eventos personalizados**: Clicks en proyectos, interacciones
+- **Demografía**: País, idioma, dispositivo (si está habilitado)
 
 ## 🔍 Debugging
 
@@ -194,7 +176,6 @@ Analytics Event: project_view {
    ```
    VITE_GA_MEASUREMENT_ID = G-TU_ID_REAL
    VITE_ENABLE_ANALYTICS = true
-   VITE_NETLIFY_ANALYTICS = true
    ```
 
 ### Build y Deploy
@@ -207,8 +188,7 @@ npm run build
 
 - [ ] Cuenta GA4 creada
 - [ ] Measurement ID configurado
-- [ ] Variables de entorno establecidas
-- [ ] Netlify Analytics habilitado
+- [ ] Variables de entorno establecidas en Netlify
 - [ ] Banner de cookies configurado (opcional)
 - [ ] Eventos personalizados definidos
 - [ ] Testing en producción realizado
@@ -234,5 +214,6 @@ npm run build
 ## 📚 Recursos Adicionales
 
 - [Google Analytics 4 Documentation](https://developers.google.com/analytics/devguides/collection/ga4)
-- [Netlify Analytics](https://docs.netlify.com/monitor-sites/analytics/)
+- [GA4 Event Reference](https://developers.google.com/analytics/devguides/collection/ga4/reference/events)
 - [GDPR Compliance](https://support.google.com/analytics/answer/9019185)
+- [GA4 Property Setup](https://support.google.com/analytics/answer/9304153)

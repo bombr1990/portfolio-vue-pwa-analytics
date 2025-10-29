@@ -13,7 +13,3 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-
-# Nota: Netlify Analytics se habilita directamente desde el dashboard
-# No requiere plugin adicional en netlify.toml
-# Ve a: Site settings → Analytics → Enable Analytics

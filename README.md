@@ -1,13 +1,13 @@
-# 🎨 Portfolio Vue PWA con Analytics
+# 🎨 Portfolio Vue PWA con Google Analytics
 
-Un portfolio moderno desarrollado con Vue 3, Vite, y configuración completa de analytics para Netlify y Google Analytics 4.
+Un portfolio moderno desarrollado con Vue 3, Vite, y Google Analytics 4 integrado.
 
 ## ✨ Características
 
 - 🚀 **Vue 3** con Composition API
 - ⚡ **Vite** para desarrollo rápido
 - 📱 **PWA** (Progressive Web App)
-- 📊 **Analytics integrados** (GA4 + Netlify)
+- 📊 **Google Analytics 4** integrado
 - 🍪 **Gestión de cookies** conforme a GDPR
 - 📱 **Responsive design**
 - 🎯 **API externa** para proyectos
@@ -98,14 +98,13 @@ analytics.trackEvent('custom_action', {
 analytics.trackConversion('AW-ID', 'LABEL', 1)
 ```
 
-## 🔧 Tecnologías Utilizadas
+## �️ Tecnologías Utilizadas
 
 - **Vue 3** - Framework principal
 - **Vite** - Build tool y dev server
 - **Vue Router** - Enrutamiento SPA
 - **Workbox** - Service Worker para PWA
 - **Google Analytics 4** - Web analytics
-- **Netlify Analytics** - Server-side analytics
 - **MockAPI** - API externa para datos
 
 ## 🌐 Despliegue
