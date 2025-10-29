@@ -57,16 +57,17 @@ export const analyticsConfig = {
 // Función para verificar si el tracking está habilitado
 export function isTrackingEnabled() {
   // Verificar Do Not Track
-  if (analyticsConfig.privacy.respectDoNotTrack && navigator.doNotTrack === '1') {
+  if (analyticsConfig.privacy.respectDoNotTrack && typeof navigator !== 'undefined' && navigator.doNotTrack === '1') {
     return false
   }
   
-  // Verificar si estamos en desarrollo
-  if (import.meta.env.DEV) {
+  // Verificar si estamos en desarrollo local
+  if (import.meta.env.DEV && import.meta.env.VITE_ENABLE_ANALYTICS !== 'true') {
     return false // Deshabilitado en desarrollo por defecto
   }
   
-  return analyticsConfig.googleAnalytics.enabled
+  // En producción, verificar que esté habilitado
+  return analyticsConfig.googleAnalytics.enabled && analyticsConfig.googleAnalytics.measurementId !== 'G-XXXXXXXXXX'
 }
 
 // Función para obtener configuración de consentimiento
@@ -75,6 +76,7 @@ export function getConsentConfig() {
     ad_storage: 'denied',
     ad_user_data: 'denied',
     ad_personalization: 'denied',
-    analytics_storage: analyticsConfig.privacy.cookieConsent ? 'granted' : 'denied'
+    // Permitir analytics_storage por defecto (cumple con GDPR si anonymizeIP está en true)
+    analytics_storage: 'granted'
   }
 }

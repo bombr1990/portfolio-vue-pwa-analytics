@@ -7,9 +7,33 @@ export function useAnalytics() {
 
   // Función para inicializar Google Analytics
   const initializeGA = () => {
-    if (typeof window === 'undefined' || isInitialized.value || !isTrackingEnabled()) return
+    console.log('🔍 Intentando inicializar Analytics...', {
+      window: typeof window !== 'undefined',
+      isInitialized: isInitialized.value,
+      isTrackingEnabled: isTrackingEnabled(),
+      measurementId: analyticsConfig.googleAnalytics.measurementId,
+      enabled: analyticsConfig.googleAnalytics.enabled,
+      env: import.meta.env.MODE
+    })
+
+    if (typeof window === 'undefined') {
+      console.warn('❌ Window no está definido')
+      return
+    }
+    
+    if (isInitialized.value) {
+      console.warn('⚠️ Analytics ya está inicializado')
+      return
+    }
+    
+    if (!isTrackingEnabled()) {
+      console.warn('❌ Tracking está deshabilitado')
+      return
+    }
 
     const { measurementId, config } = analyticsConfig.googleAnalytics
+
+    console.log('✅ Inicializando Google Analytics con ID:', measurementId)
 
     // Configurar consentimiento antes de cargar GA
     window.dataLayer = window.dataLayer || []
@@ -19,7 +43,9 @@ export function useAnalytics() {
     window.gtag = gtag
 
     // Configurar consentimiento
-    gtag('consent', 'default', getConsentConfig())
+    const consentConfig = getConsentConfig()
+    console.log('🍪 Configuración de consentimiento:', consentConfig)
+    gtag('consent', 'default', consentConfig)
 
     // Cargar el script de Google Analytics
     const script = document.createElement('script')
@@ -36,11 +62,11 @@ export function useAnalytics() {
       })
 
       isInitialized.value = true
-      console.log('Google Analytics inicializado con ID:', measurementId)
+      console.log('✅ Google Analytics inicializado correctamente con ID:', measurementId)
     }
 
     script.onerror = () => {
-      console.warn('Error cargando Google Analytics')
+      console.error('❌ Error cargando Google Analytics')
     }
   }
 
